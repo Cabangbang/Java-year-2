@@ -1,0 +1,8 @@
+
+public class WordCount extends ReadFile{
+
+	public static int CountWordsinFile(String line) {
+		int countOfWords = 0;
+		return countOfWords;s
+	}
+}

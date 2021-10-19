@@ -1,0 +1,55 @@
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class GUI{
+	JFrame frame;
+	JPanel panel1, panel2;
+	JButton button1;
+	JTextField tf1;
+
+	
+	public GUI() {
+		frame = new JFrame();
+		panel1 = new JPanel(new FlowLayout());
+		panel2 = new JPanel(new FlowLayout());
+		button1 = new JButton("Search");
+		tf1 = new JTextField("Enter Word");
+
+		
+		tf1.setToolTipText("Enter the word here");
+		button1.setToolTipText("This is the first button, and show a message when clicked");
+		
+		panel1.add(tf1);
+		panel2.add(button1);
+
+
+		frame.add(panel1);
+		frame.add(panel2);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setTitle("GUI");
+		frame.setSize(500,500);
+		frame.setLayout(new FlowLayout());
+		frame.setVisible(true);
+	}
+	
+	public static void main(String[] args) 
+	{
+		new GUI();
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource()==button1)
+		{
+			JOptionPane.showMessageDialog(button1, "Button1 was clicked");
+			String searchedWord = tf1.getText();
+			System.out.println(searchedWord);
+		}
+	}
+	
+}
